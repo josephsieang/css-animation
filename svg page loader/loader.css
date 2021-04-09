@@ -1,0 +1,60 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the SVG circles */
+#page-loader {
+  width: 150px;
+  height: 150px;
+}
+
+#page-loader circle {
+  fill: none;
+  stroke-width: 10;
+  /* Make stroke smooth */
+  stroke-linecap: round;
+
+  animation-name: loader;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transform-origin: center center;
+}
+
+#page-loader circle:nth-child(1) {
+  stroke: #ffc114;
+  stroke-dasharray: 50;
+
+  animation-delay: -0.2s;
+}
+
+#page-loader circle:nth-child(2) {
+  stroke: #ff5248;
+  stroke-dasharray: 100;
+
+  animation-delay: -0.4s;
+}
+
+#page-loader circle:nth-child(3) {
+  stroke: #19cdca;
+  stroke-dasharray: 180;
+
+  animation-delay: -0.6s;
+}
+
+#page-loader circle:nth-child(4) {
+  stroke: #4e80e1;
+  stroke-dasharray: 350;
+
+  animation-delay: -0.8s;
+}
+
+/* Create the keyframe animation */
+@keyframes loader {
+  50% {
+    transform: rotate(360deg);
+  }
+}

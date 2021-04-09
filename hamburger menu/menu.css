@@ -1,0 +1,138 @@
+body {
+  height: 100vh;
+}
+
+/* Style the hamburger icon */
+.hamburger-button {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 2rem;
+  right: 0;
+  margin-right: 2rem;
+  z-index: 1000;
+}
+
+.hamburger-button span {
+  position: absolute;
+  height: 8px;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #3d4146;
+  top: 0;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.hamburger-button span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger-button span:nth-child(2),
+.hamburger-button span:nth-child(3) {
+  top: 13px;
+}
+
+.hamburger-button span:nth-child(4) {
+  top: 26px;
+}
+
+/* Style the active state and create the cross */
+.hamburger-button.active span:nth-child(1),
+.hamburger-button.active span:nth-child(4) {
+  opacity: 0;
+}
+
+.hamburger-button.active span:nth-child(2) {
+  transform: rotate(45deg);
+  background-color: #fff;
+
+}
+.hamburger-button.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+
+/* Style the overlay and navigation */
+.overlay {
+  position: fixed;
+  background: #7ba9c3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity .3s, visibility .3s, height .3s;
+}
+
+nav {
+  font-size: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 1rem 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity .2s ease;
+  opacity: .75;
+}
+
+nav ul li a:hover {
+  opacity: 1;
+}
+
+/* Add the animation */
+@keyframes fade-in-left {
+  0% {
+    /* opacity: 0; */
+    transform: translate3d(-25%, 0, 0);
+  }
+
+  100% {
+    /* opacity: 1; */
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Style the visible overlay */
+.overlay.visible {
+  opacity: .9;
+  visibility: visible;
+  height: 100%;
+}
+
+.overlay.visible li {
+  transform: translate3d(-25%, 0, 0);
+  animation: fade-in-left 1s ease forwards;
+}
+
+.overlay.visible li:nth-of-type(1) {
+  animation-delay: .23s;
+}
+.overlay.visible li:nth-of-type(2) {
+  animation-delay: .27s;
+}
+.overlay.visible li:nth-of-type(3) {
+  animation-delay: .3s;
+}
+.overlay.visible li:nth-of-type(4) {
+  animation-delay: .33s;
+}
+.overlay.visible li:nth-of-type(5) {
+  animation-delay: .36s;
+}

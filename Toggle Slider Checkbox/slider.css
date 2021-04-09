@@ -1,0 +1,48 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hide the checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Create slider base and knob */
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 50px;
+  background-color: #dff7fa;
+  border-radius: 25px;
+  /* To place something absolute on it, need to set it to relative */
+  position: relative; 
+  transition: all .4s ease-out;
+}
+
+label::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #a5cace;
+  border-radius: 50%;
+  transition: all .4s ease-out;
+}
+
+/* Create the styling for the checked state */
+input:checked + label {
+  background: #96e7ef;
+}
+
+input:checked + label::after {
+  /* transform with 3d will benefit from 3d acceleration from video cards to provide smoother transition*/
+  transform: translate3d(50px, 0, 0);
+  background-color: #1d6269;
+}
+
