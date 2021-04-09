@@ -99,12 +99,12 @@ nav ul li a:hover {
 /* Add the animation */
 @keyframes fade-in-left {
   0% {
-    /* opacity: 0; */
+    opacity: 0.85;
     transform: translate3d(-25%, 0, 0);
   }
 
   100% {
-    /* opacity: 1; */
+    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
